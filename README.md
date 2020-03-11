@@ -1,0 +1,2 @@
+# EmoChess
+JavaScript Chess Engine
