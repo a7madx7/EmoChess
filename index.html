@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emo engine!</title>
+    <script type="text/javascript">
+        if (!window.console) console = {
+            log: function () {}
+        };
+    </script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/ux.css">
+    <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+</head>
+
+</head>
+
+<body class=" deep-purple lighten-4">
+    <nav class=" deep-purple darken-2">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">
+                <img src="img/log2.png" alt="logo" width="100px" height="auto">
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#" id="navNewGameBtn">New Game</a></li>
+                <li><a href="#" class="flipOrientationBtn">Flip Sides</a></li>
+                <li><a href="#">Learn from my mistakes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main class="emo-main">
+        <div class="row">
+            <div class="col s12 l4">
+                <div class="row">
+                    <div class="input-field col s11 m11 l11">
+                        <i class="material-icons prefix">attachment</i>
+                        <input type="text" class="validate" id="fenIn">
+                        <label for="fenIn">Fen</label>
+                        <!-- <input type="text" name="" id="fenIn">
+                                        <label for="icon_prefix">Fen</label> -->
+                    </div>
+                    <div class="input-field col s1 m1 l1">
+                        <button id="setFen" class="btn-floating btn-large waves-effect waves-light purple"><i
+                                class="material-icons">add</i></b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s4 m4 l4">
+                        <button id="startBtn" class="btn-large waves-effect waves-light green">Start
+                            Position</button>
+                    </div>
+                    <div class="col s4 m4 l4">
+                        <button id="clearBtn" class="btn-large waves-effect waves-light red">Clear
+                            Board</button>
+                    </div>
+                    <div class="col s4 m4 l4">
+                        <button id="clearBtn" class="btn-large waves-effect waves-light teal">Take
+                            Back</button>
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                      <div class="card-panel deep-purple darken-5">
+                        <div class="white-text flow-text">
+                            <blockquote>Side to play: <span id="sideToPlay">White</span></blockquote>
+                        </div>
+                        <div class="white-text flow-text">
+                            <blockquote>Emo Evaluation: <span id="evaluation">1.8</span></blockquote>
+                        </div>
+                        <div class="white-text flow-text">
+                            <blockquote>Search strength: <span id="searchStrength">20Kn</span></blockquote>
+                        </div>
+                        <div class="white-text flow-text">
+                            <blockquote>Blunders: <span id="blunders">6</span></blockquote>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col s11 push-s1 l7 offset-l1">
+                <div id="board1" style="width: 70%"></div>
+            </div>
+
+            <div class="fixed-action-btn">
+                <a class="btn-floating btn-large purple">
+                    <i class="large material-icons">dashboard</i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating green"><i class="material-icons">local_cafe</i></a></li>
+
+                    <li><a class="btn-floating red"><i class="material-icons">library_books</i></a></li>
+                    <li><a class="btn-floating yellow darken-1"><i class="material-icons">lightbulb_outline</i></a></li>
+                    <li><a class="btn-floating blue"><i class="material-icons">restore</i></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+    <br>
+    <br>
+    
+    <footer class="page-footer deep-purple darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12 m6">
+                    <h5 class="white-text">About Emo Engine</h5>
+                    <p class="grey-text text-lighten-4">I created this engine out of my Love for three things, My wife,
+                        Chess and Programming!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contact</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://twitter.com/hamdiz_rb">Hamdiz on
+                                twitter</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://facebook.com/a7madx7">Hamdiz on
+                                Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Dr. Ahmad Hamdi Emara
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/chessboard-1.0.0.min.js"></script>
+    <script type="text/javascript" src="js/defs.js"></script>
+    <script type="text/javascript" src="js/io.js"></script>
+    <script type="text/javascript" src="js/board.js"></script>
+    <script type="text/javascript" src="js/movegen.js"></script>
+    <script type="text/javascript" src="js/engine.js"></script>
+    <script src="js/ui.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/tests.js"></script>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
